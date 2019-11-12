@@ -1,0 +1,11 @@
+ 启动测试
+先启动 EurekaServerApplication
+然后启动 IndexDataApplication
+接着启动 TrendTradingBackTestServiceApplication。
+最后启动 IndexHystrixDashboardApplication
+运行 AccessService 类
+注： 记得运行redis-server.exe 以启动 redis 服务器
+然后访问地址： 
+http://localhost:8070/hystrix
+输入参数：
+http://localhost:8051/actuator/hystrix.stream

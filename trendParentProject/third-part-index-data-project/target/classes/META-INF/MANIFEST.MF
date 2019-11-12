@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: third-part-index-data-project
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Dell
+Implementation-Vendor-Id: cn.how2j.trend
+Build-Jdk: 1.8.0_131
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/trendParentProject/third-part-index-data-project
+Created-By: Maven Integration for Eclipse
+

@@ -1,0 +1,7 @@
+首先进行 git 配置
+接着运行 EurekaServerApplication
+然后运行 IndexConfigServerApplication
+然后访问地址
+ 
+http://localhost:8060/version/dev
+看到如图所示的就表示配置服务器 ok了。

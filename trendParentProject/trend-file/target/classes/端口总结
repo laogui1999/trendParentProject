@@ -1,0 +1,15 @@
+	eureka-server						8761     	服务注册中心 
+	third-part-index-data-project		8090   		第三方数据服务
+	index-gather-store-service			8001   		采集和储存微服务
+	index-codes-service					8011,8012,8013  	指数代码微服务
+	index-data-service					8021,8022,8023 	指数数据微服务	
+	index-zuul-service					8031     		 网关
+	trend-trading-backtest-view			8041,8042,8043	模拟回测微服务
+	trend-trading-backtest-service		8051,8052,8053	模拟回测视图微服务
+	index-config-server					8060			 配置服务器
+	index-hystrix-dashboard				8070			断路器监控
+	index-turbine						8080			断路器聚合监控
+	第三方工具：
+	redis								6379			Redis 服务器
+	zipkin								9411			链路追踪服务器
+	rabbitmq							5672			分布式配置-消息总线 

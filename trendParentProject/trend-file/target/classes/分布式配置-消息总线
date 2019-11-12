@@ -1,0 +1,28 @@
+先启动 EurekaServerApplication
+按照后面的步骤 启动 RabbitMQ
+接着启动 IndexConfigServerApplication
+跟着启动 IndexCodesApplication
+然后启动 IndexDataApplication
+接着启动 TrendTradingBackTestServiceApplication
+随后启动 TrendTradingBackTestViewApplication: 8041,8042 两个端口
+最后启动 IndexZuulServiceApplication
+注： 记得运行redis-server.exe 以启动 redis 服务器
+
+然后访问地址： 
+http://127.0.0.1:8031/api-view/
+
+修改git地址 https://github.com/how2j/trendConfig/blob/master/respo/trend-trading-backtest-view-dev.properties 成为新的版本
+然后运行 FreshConfigUtil类 刷新。
+拉到最下面，可以看到这个版权信息刷新了。
+
+
+刷新问题 
+前面的配置服务器和配置客户端的问题是当 数据更新后，必须重启配置服务器和配置客户端才能生效。 这个在生产环境肯定是不可接受的。
+所以要能够做到实时刷新。 为了做到这一点，我们需要借助于 rabiitMQ 来广播配置服务器获取到的信息。
+它的业务逻辑是这样的（view:8041 就代表端口是 8041 的视图实例）：
+
+1. 通过运行FreshConfigUtil类， 以 post 方式访问地址 http://localhost:8041/actuator/bus-refresh，通知 view:8041 刷新配置。
+2. view:8041 告诉 index-config-server 获取新的配置数据
+3. index-config-server 从 git 拿到数据，返回给 view:8041
+4. view:8041 拿到数据不仅自己用了，还发给了 rabbitMQ
+5. rabbitMQ 拿到这个数据广播给其他的，比如 view:8042

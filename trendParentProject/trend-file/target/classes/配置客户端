@@ -1,0 +1,11 @@
+先启动 EurekaServerApplication
+接着启动 IndexConfigServerApplication
+跟着启动 IndexCodesApplication
+然后启动 IndexDataApplication
+接着启动 TrendTradingBackTestServiceApplication
+随后启动 TrendTradingBackTestViewApplication
+最后启动 IndexZuulServiceApplication
+注： 记得运行redis-server.exe 以启动 redis 服务器
+然后访问地址：
+http://127.0.0.1:8031/api-view/
+拉到最下面，可以看到这个版权信息就从 git 获取出来了。
