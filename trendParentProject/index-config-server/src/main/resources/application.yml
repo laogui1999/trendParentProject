@@ -6,7 +6,7 @@ spring:
       label: master   ### 表示 分支
       server:
         git:
-          uri: https://github.com/how2j/trendConfig/  ### 表示 git 地址
+          uri: https://github.com/laogui1999/trendConfig/  ### 表示 git 地址
           searchPaths: respo   ###表示目录：
 eureka:
   client:
